@@ -1,14 +1,6 @@
 package com.example.demo;public class Student {
-    String name;
     Integer id;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    String name;
 
     public Integer getId() {
         return id;
@@ -16,5 +8,13 @@ package com.example.demo;public class Student {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

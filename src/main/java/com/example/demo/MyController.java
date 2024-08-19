@@ -1,7 +1,9 @@
 package com.example.demo;
 
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -10,21 +12,21 @@ import java.util.List;
 @RestController
 public class MyController {
 
-    @RequestMapping("/product")
-    public Store product(){
-        Store store = new Store();
-        List<String> list = new ArrayList<>();
-        list.add("蘋果");
-        list.add("橘子");
-        store.setProductList(list);
-        return store;
+
+    @RequestMapping("/test1")
+    public String test1(@RequestParam(defaultValue = "10") Integer id,
+                        @RequestParam(required = false) String name){
+        System.out.println("id: " + id);
+        System.out.println("name: " + name);
+        return "Hello test1";
     }
 
-    @RequestMapping("/user")
-    public Student user(){
-        Student student = new Student();
-        student.setName("Judy");
-        return student;
+    @RequestMapping("/test2")
+    public String test2(@RequestBody Student student){
+        System.out.println("StudentID: " + student.getId());
+        System.out.println("StudentName: " + student.getName());
+        return "Hello test2";
     }
+
 
 }
