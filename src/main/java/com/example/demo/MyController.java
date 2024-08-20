@@ -10,11 +10,13 @@ public class MyController {
 
     @RequestMapping("/test1")
     public String test1() {
-        throw new RuntimeException("test1 error");
+        System.out.println("執行test1方法");
+        return "hello test1";
     }
 
     @RequestMapping("/test2")
     public String test2() {
-        throw  new IllegalStateException("test2 error");
+        System.out.println("執行test2方法");
+        return "hello test2";
     }
 }
