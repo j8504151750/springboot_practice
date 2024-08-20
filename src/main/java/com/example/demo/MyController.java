@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyController {
 
-    @RequestMapping("/test")
-    public ResponseEntity<String> test(){
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Hello World");
+    @RequestMapping("/test1")
+    public String test1() {
+        throw new RuntimeException("test1 error");
+    }
+
+    @RequestMapping("/test2")
+    public String test2() {
+        throw  new IllegalStateException("test2 error");
     }
 }
