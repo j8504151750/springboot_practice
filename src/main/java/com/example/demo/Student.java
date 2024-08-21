@@ -1,8 +1,18 @@
 package com.example.demo;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "student")//對應到資料固的student表
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     Integer id;
+
+    @Column(name = "name")
     String name;
 
     public Integer getId() {
